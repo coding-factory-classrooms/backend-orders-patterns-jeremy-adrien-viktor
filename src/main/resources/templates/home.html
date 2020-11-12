@@ -2,6 +2,15 @@
 #@mainLayout()
 <h1>Home Template</h1>
 <div>
-    <img src="img/java.jpg" />
+    <p>Select pizza</p>
+    <select id="pizza">
+        <option value="">--Please choose an option--</option>
+        #foreach ($p in $pizzaList)
+        <option value="$p.getName()">
+            $p.getName()
+        </option>
+        #end
+    </select>
+
 </div>
 #end

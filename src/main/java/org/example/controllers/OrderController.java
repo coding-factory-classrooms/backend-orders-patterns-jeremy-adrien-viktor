@@ -58,10 +58,21 @@ public class OrderController {
     }
 
     public String orderDetail(Request req, Response res){
-        Map<String, Object> model = new HashMap<>();
+
+        String action = req.queryParamOrDefault("action", "");
+        String value = req.queryParamOrDefault("value", "");
+
         String idParam = req.params(":id");
         int id = Integer.parseInt(idParam);
         int index = id - 1;
+
+        if (action.equals("set_state")) {
+            Order.State state = Order.State.valueOf(value);
+            orders.getOrder(index).setState(state);
+        }
+
+        Map<String, Object> model = new HashMap<>();
+        model.put("id", id);
         model.put("order",orders.getOrder(index));
         return  Template.render("orderDetail.html", model);
     }

@@ -2,8 +2,52 @@
 #@mainLayout()
 <h1>Order detail Template</h1>
 <div>
+
     $order.getDish()
     $order.getDateOrder()
     $order.getState()
+
+
+    <button id="update_to_NEW"
+        #if ($order.getState().name() == "NEW")
+            disabled
+        #end
+    >NEW</button>
+    <button id="update_to_IN_PROGRESS"
+        #if ($order.getState().name() == "IN_PROGRESS")
+            disabled
+        #end
+    >IN PROGRESS</button>
+    <button id="update_to_DONE"
+        #if ($order.getState().name() == "DONE")
+            disabled
+        #end
+    >DONE</button>
+    <button id="update_to_CANCEL"
+        #if ($order.getState().name() == "CANCEL")
+            disabled
+        #end
+    >CANCEL</button>
+
 </div>
+
+<script type="text/javascript">
+
+    document.getElementById("update_to_NEW").onclick = function(){
+        window.location = "/dashboard/$id?action=set_state&value=NEW"
+    }
+
+    document.getElementById("update_to_IN_PROGRESS").onclick = function(){
+        window.location = "/dashboard/$id?action=set_state&value=IN_PROGRESS"
+    }
+
+    document.getElementById("update_to_DONE").onclick = function(){
+        window.location = "/dashboard/$id?action=set_state&value=DONE"
+    }
+
+    document.getElementById("update_to_CANCEL").onclick = function(){
+        window.location = "/dashboard/$id?action=set_state&value=CANCEL"
+    }
+
+</script>
 #end

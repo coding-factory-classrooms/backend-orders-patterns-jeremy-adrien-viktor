@@ -53,4 +53,12 @@ public class Order {
     public List<Dish> getDish() {
         return dish;
     }
+
+    public boolean isInThisState(State state){
+        System.out.println("state");
+        if (getState() == state){
+            return true;
+        }
+        return false;
+    }
 }

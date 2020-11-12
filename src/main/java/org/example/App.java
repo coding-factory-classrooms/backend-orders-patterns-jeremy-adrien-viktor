@@ -52,30 +52,49 @@ public class App {
 
         paniniList.add(
                 new Panini(
-                        "PANINI KEBAB",
+                        "PANINI 3 FROMAGES",
                         new ArrayList<>() {
                             {
-                                add(new Ingredient("Viande kebab"));
+                                add(new Ingredient("Chèvre"));
                                 add(new Ingredient("Mozzarella"));
-                                add(new Ingredient("Sauce blanche"));
+                                add(new Ingredient("gorgonzola"));
+                                add(new Ingredient("Fromage à la crème"));
                             }
                         },
                         11.5f,
-                        "Crème fraîche légère française, mozzarella, mélange fondue aux 3 fromages (emmental, gruyère et beaufort), lardons fumés"
+                        "Faites place à l'onctuosité et à la gourmandise avec ce panini 3 fromages composé de mozzarella, chèvre, gorgonzola et sauce crémée"
                 )
         );
         paniniList.add(
                 new Panini(
-                        "PANINI KEBAB",
+                        "PANINI POULET",
                         new ArrayList<>() {
                             {
-                                add(new Ingredient("Viande kebab"));
+                                add(new Ingredient("Poulet"));
                                 add(new Ingredient("Mozzarella"));
-                                add(new Ingredient("Sauce blanche"));
+                                add(new Ingredient("Batavia"));
+                                add(new Ingredient("Fromage à la crème"));
+                                add(new Ingredient("Oignons"));
                             }
                         },
                         11.5f,
-                        "Crème fraîche légère française, mozzarella, mélange fondue aux 3 fromages (emmental, gruyère et beaufort), lardons fumés"
+                        "Découvrez notre panini au poulet aussi savoureux que léger avec son poulet, mozzarella, salade, fromage à la crème et oignons"
+                )
+        );
+        paniniList.add(
+                new Panini(
+                        "PANINI SAUMON",
+                        new ArrayList<>() {
+                            {
+                                add(new Ingredient("Saumon fumé"));
+                                add(new Ingredient("Mozzarella"));
+                                add(new Ingredient("Batavia"));
+                                add(new Ingredient("Fromage à la crème"));
+                                add(new Ingredient("Tomates"));
+                            }
+                        },
+                        11.5f,
+                        "Le panini au saumon composé de saumon fumé, mozzarella, salade, fromage à la crème et tomate fraîche  sera parfait si vous cherchez un plat délicat et frais"
                 )
         );
 
@@ -104,26 +123,28 @@ public class App {
 
         pizzaList.add(
                 new Pizza(
-                        "SAVOUREUSE FONDUE",
+                        "AUTHENTIQUE RACLETTE",
                         new ArrayList<>() {
                             {
-                                add(new Ingredient("Lardons"));
-                                add(new Ingredient("Fromage"));
-                                add(new Ingredient("Mozzarella"));
                                 add(new Ingredient("Crème fraîche"));
+                                add(new Ingredient("Mozzarella"));
+                                add(new Ingredient("Bacon"));
+                                add(new Ingredient("Oignons"));
+                                add(new Ingredient("Pomme de terre"));
+                                add(new Ingredient("Fromage à raclette"));
                             }
                         },
                         Pizza.DoughType.CLASSIC,
                         11.5f,
-                        "Crème fraîche légère française, mozzarella, mélange fondue aux 3 fromages (emmental, gruyère et beaufort), lardons fumés"
+                        "Crème fraîche légère française, mozzarella, bacon, oignons, pommes de terre sautées, raclette française"
                 )
         );
         pizzaList.add(
                 new Pizza(
-                        "SAVOUREUSE FONDUE",
+                        "Généreuse Avalanche",
                         new ArrayList<>() {
                             {
-                                add(new Ingredient("Lardons"));
+                                add(new Ingredient("Reblochon"));
                                 add(new Ingredient("Fromage"));
                                 add(new Ingredient("Mozzarella"));
                                 add(new Ingredient("Crème fraîche"));
@@ -131,23 +152,25 @@ public class App {
                         },
                         Pizza.DoughType.CLASSIC,
                         11.5f,
-                        "Crème fraîche légère française, mozzarella, mélange fondue aux 3 fromages (emmental, gruyère et beaufort), lardons fumés"
+                        "Crème fraîche légère française, mozzarella, mélange fondue aux 3 fromages (emmental, gruyère et beaufort), Reblochon AOP de Savoie."
                 )
         );
         pizzaList.add(
                 new Pizza(
-                        "SAVOUREUSE FONDUE",
+                        "Urban Kebab",
                         new ArrayList<>() {
                             {
-                                add(new Ingredient("Lardons"));
-                                add(new Ingredient("Fromage"));
+                                add(new Ingredient("Tomate"));
+                                add(new Ingredient("Viande Kebab"));
                                 add(new Ingredient("Mozzarella"));
-                                add(new Ingredient("Crème fraîche"));
+                                add(new Ingredient("Merguez"));
+                                add(new Ingredient("Oignons"));
+                                add(new Ingredient("Sauce blanche"));
                             }
                         },
                         Pizza.DoughType.CLASSIC,
                         11.5f,
-                        "Crème fraîche légère française, mozzarella, mélange fondue aux 3 fromages (emmental, gruyère et beaufort), lardons fumés"
+                        "Sauce tomate, mozzarella, viande kebab, merguez, oignons, sauce blanche kebab"
                 )
         );
 

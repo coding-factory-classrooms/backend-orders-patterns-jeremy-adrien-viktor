@@ -1,10 +1,9 @@
 package org.example.controllers;
 
-import org.example.Order;
+import org.example.models.Order;
 import org.example.OrdersSystem;
 import org.example.core.Template;
 import org.example.models.Dish;
-import org.example.models.Ingredient;
 import org.example.models.Panini;
 import org.example.models.Pizza;
 import org.example.utils.URLUtils;
@@ -48,6 +47,7 @@ public class OrderController {
     public String dashBoard(Request req, Response res){
         Map<String, Object> model = new HashMap<>();
         model.put("orders",orders.getOrderList());
+        model.put("ordershistory",orders.getHistory());
         return  Template.render("dashboard.html", model);
     }
 

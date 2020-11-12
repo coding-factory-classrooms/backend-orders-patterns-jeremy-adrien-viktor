@@ -4,7 +4,6 @@ import org.example.controllers.OrderController;
 import org.example.core.Conf;
 import org.example.core.Template;
 import org.example.middlewares.LoggerMiddleware;
-import org.example.models.Dish;
 import org.example.models.Ingredient;
 import org.example.models.Panini;
 import org.example.models.Pizza;
@@ -19,8 +18,7 @@ public class App {
     public static void main(String[] args) {
         initialize();
 
-        Order orders = new Order();
-        orders.setOrderList(new ArrayList<>());
+        OrdersSystem orders = new OrdersSystem();
         List<Pizza> pizzaList = ourPizza();
         List<Panini> paniniList = ourPanini();
 
@@ -30,7 +28,6 @@ public class App {
         Map<String, Object> model = new HashMap<>();
         model.put("pizzaList", pizzaList);
         model.put("paniniList", paniniList);
-
 
         Spark.get("/", (req, res) -> {
             return Template.render("home.html", model);

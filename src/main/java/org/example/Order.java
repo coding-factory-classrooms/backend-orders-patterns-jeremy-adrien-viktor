@@ -13,7 +13,12 @@ public class Order {
         CANCEL,
     }
 
-    private List<Dish> orderList;
+    private List<Dish> dish;
+
+    public void setDishes(List<Dish> dish) {
+        this.dish = dish;
+    }
+
     private State state;
 
     public State getState() {
@@ -24,16 +29,7 @@ public class Order {
         this.state = state;
     }
 
-    public List<Dish> getOrderList() {
-        return orderList;
-    }
-
-    public void setOrderList(List<Dish> orderList) {
-        this.orderList = orderList;
-    }
-
-    public boolean addOrder(Dish dish){
-        this.state = State.NEW;
-        return this.orderList.add(dish);
+    public List<Dish> getDish() {
+        return dish;
     }
 }

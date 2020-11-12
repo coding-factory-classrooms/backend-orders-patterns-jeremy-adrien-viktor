@@ -2,15 +2,30 @@
 #@mainLayout()
 <h1>Home Template</h1>
 <div>
-    <p>Select pizza</p>
-    <select id="pizza">
-        <option value="">--Please choose an option--</option>
-        #foreach ($p in $pizzaList)
-        <option value="$p.getName()">
-            $p.getName()
-        </option>
-        #end
-    </select>
+    <div>
+        <p>Select pizza</p>
+        <select id="pizza">
+            <option value="">--Please choose an option--</option>
+            #foreach ($p in $pizzaList)
+            <option value="$p.getName()">
+                $p.getName()
+            </option>
+            #end
+        </select>
+    </div>
+
+    <div>
+        <p>Select panini</p>
+        <select id="panini">
+            <option value="">--Please choose an option--</option>
+            #foreach ($p in $paniniList)
+            <option value="$p.getName()">
+                $p.getName()
+            </option>
+            #end
+        </select>
+    </div>
+
 
 </div>
 #end

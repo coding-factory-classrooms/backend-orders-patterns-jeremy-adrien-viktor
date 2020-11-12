@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.models.Dish;
 
+import java.util.Date;
 import java.util.List;
 
 public class Order {
@@ -11,6 +12,26 @@ public class Order {
         IN_PROGRESS,
         DONE,
         CANCEL,
+    }
+
+    private float totalPrice;
+
+    public float getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(float totalePrice) {
+        this.totalPrice = totalePrice;
+    }
+
+    private Date dateOrder;
+
+    public Date getDateOrder() {
+        return dateOrder;
+    }
+
+    public void setDateOrder(Date dateOrder) {
+        this.dateOrder = dateOrder;
     }
 
     private List<Dish> dish;

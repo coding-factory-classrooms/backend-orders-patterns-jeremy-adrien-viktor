@@ -50,6 +50,21 @@ public class OrderController {
         model.put("order", o);
         return Template.render("clientOrder.html", model);
     }
+
+    public String dashBoard(Request req, Response res){
+        Map<String, Object> model = new HashMap<>();
+        model.put("orders",orders.getOrderList());
+        return  Template.render("dashboard.html", model);
+    }
+
+    public String orderDetail(Request req, Response res){
+        Map<String, Object> model = new HashMap<>();
+        String idParam = req.params(":id");
+        int id = Integer.parseInt(idParam);
+        int index = id - 1;
+        model.put("order",orders.getOrder(index));
+        return  Template.render("orderDetail.html", model);
+    }
 }
 
 

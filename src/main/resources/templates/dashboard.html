@@ -1,0 +1,28 @@
+#parse("base.html")
+#@mainLayout()
+<h1>Dashboard Template</h1>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Order</th>
+            <th>Date</th>
+            <th>Price</th>
+            <th>State</th>
+        </tr>
+        </thead>
+        <tbody>
+        #foreach ($o in $orders)
+        <tr>
+            <td><a href="/dashboard/$velocityCount">$velocityCount</a></td>
+            <td>$o.getDish()</td>
+            <td>$o.getDateOrder()</td>
+            <td>$o.getTotalPrice()</td>
+            <td>$o.getState()</td>
+        </tr>
+        #end
+        </tbody>
+    </table>
+</div>
+#end

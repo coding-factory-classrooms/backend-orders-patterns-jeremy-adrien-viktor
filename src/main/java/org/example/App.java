@@ -37,6 +37,7 @@ public class App {
 
         paniniList.add(
                 new Panini(
+                        "panini_kebab",
                         "PANINI KEBAB",
                         new ArrayList<>() {
                             {
@@ -46,12 +47,13 @@ public class App {
                             }
                         },
                         11.5f,
-                        "Crème fraîche légère française, mozzarella, mélange fondue aux 3 fromages (emmental, gruyère et beaufort), lardons fumés"
+                        "Il est très très bon mon panini"
                 )
         );
 
         paniniList.add(
                 new Panini(
+                        "panini_kebab",
                         "PANINI KEBAB",
                         new ArrayList<>() {
                             {
@@ -61,11 +63,12 @@ public class App {
                             }
                         },
                         11.5f,
-                        "Crème fraîche légère française, mozzarella, mélange fondue aux 3 fromages (emmental, gruyère et beaufort), lardons fumés"
+                        "Il est très très bon mon panini"
                 )
         );
         paniniList.add(
                 new Panini(
+                        "panini_kebab",
                         "PANINI KEBAB",
                         new ArrayList<>() {
                             {
@@ -75,7 +78,7 @@ public class App {
                             }
                         },
                         11.5f,
-                        "Crème fraîche légère française, mozzarella, mélange fondue aux 3 fromages (emmental, gruyère et beaufort), lardons fumés"
+                        "Il est très très bon mon panini"
                 )
         );
 
@@ -87,6 +90,7 @@ public class App {
 
         pizzaList.add(
                 new Pizza(
+                        "pizza_savoureuse_fondue",
                         "SAVOUREUSE FONDUE",
                         new ArrayList<>() {
                             {
@@ -104,6 +108,7 @@ public class App {
 
         pizzaList.add(
                 new Pizza(
+                        "pizza_savoureuse_fondue",
                         "SAVOUREUSE FONDUE",
                         new ArrayList<>() {
                             {
@@ -120,6 +125,7 @@ public class App {
         );
         pizzaList.add(
                 new Pizza(
+                        "pizza_savoureuse_fondue",
                         "SAVOUREUSE FONDUE",
                         new ArrayList<>() {
                             {
@@ -136,6 +142,7 @@ public class App {
         );
         pizzaList.add(
                 new Pizza(
+                        "pizza_savoureuse_fondue",
                         "SAVOUREUSE FONDUE",
                         new ArrayList<>() {
                             {

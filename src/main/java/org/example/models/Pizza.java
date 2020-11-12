@@ -10,8 +10,9 @@ public class Pizza extends Dish{
         CLASSIC,THICK,THIN
     }
 
-    public Pizza(String name,List<Ingredient> ingredientList, DoughType doughType,float price,String desc) {
+    public Pizza(String name,String title, List<Ingredient> ingredientList, DoughType doughType,float price,String desc) {
         this.setName(name);
+        this.setTitle(title);
         this.setIngredientList(ingredientList);
         this.doughType = doughType;
         this.setPrice(price);

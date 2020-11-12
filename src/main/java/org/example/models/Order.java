@@ -1,4 +1,4 @@
-package org.example;
+package org.example.models;
 
 import org.example.models.Dish;
 
@@ -12,6 +12,16 @@ public class Order {
         IN_PROGRESS,
         DONE,
         CANCEL,
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "totalPrice=" + totalPrice +
+                ", dateOrder=" + dateOrder +
+                ", dish=" + dish +
+                ", state=" + state +
+                '}';
     }
 
     private float totalPrice;

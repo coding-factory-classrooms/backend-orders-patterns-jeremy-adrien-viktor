@@ -6,6 +6,7 @@ import org.example.core.Template;
 import org.example.middlewares.LoggerMiddleware;
 import org.example.models.Dish;
 import org.example.models.Ingredient;
+import org.example.models.Panini;
 import org.example.models.Pizza;
 import spark.Spark;
 
@@ -18,26 +19,139 @@ public class App {
     public static void main(String[] args) {
         initialize();
 
-        List<Pizza> pizzaList = new ArrayList<>();
-
-        List<Ingredient> ingredients = new ArrayList<>();
-        ingredients.add(new Ingredient("Lardons"));
-        ingredients.add(new Ingredient("Fromage"));
-        ingredients.add(new Ingredient("Mozzarella"));
-        ingredients.add(new Ingredient("Crème fraîche"));
-
-        Pizza pizza = new Pizza("SAVOUREUSE FONDUE",ingredients, Pizza.DoughType.CLASSIC,11.5f,"Crème fraîche légère française, mozzarella, mélange fondue aux 3 fromages (emmental, gruyère et beaufort), lardons fumés");
-        pizzaList.add(pizza);
-        pizzaList.add(pizza);
-        pizzaList.add(pizza);
-        pizzaList.add(pizza);
+        List<Pizza> pizzaList = ourPizza();
+        List<Panini> paniniList = ourPanini();
 
         Map<String, Object> model = new HashMap<>();
         model.put("pizzaList", pizzaList);
+        model.put("paniniList", paniniList);
+
 
         Spark.get("/", (req, res) -> {
             return Template.render("home.html", model);
         });
+    }
+
+    private static List<Panini> ourPanini() {
+        List<Panini> paniniList = new ArrayList<>();
+
+        paniniList.add(
+                new Panini(
+                        "PANINI KEBAB",
+                        new ArrayList<>() {
+                            {
+                                add(new Ingredient("Viande kebab"));
+                                add(new Ingredient("Mozzarella"));
+                                add(new Ingredient("Sauce blanche"));
+                            }
+                        },
+                        11.5f,
+                        "Crème fraîche légère française, mozzarella, mélange fondue aux 3 fromages (emmental, gruyère et beaufort), lardons fumés"
+                )
+        );
+
+        paniniList.add(
+                new Panini(
+                        "PANINI KEBAB",
+                        new ArrayList<>() {
+                            {
+                                add(new Ingredient("Viande kebab"));
+                                add(new Ingredient("Mozzarella"));
+                                add(new Ingredient("Sauce blanche"));
+                            }
+                        },
+                        11.5f,
+                        "Crème fraîche légère française, mozzarella, mélange fondue aux 3 fromages (emmental, gruyère et beaufort), lardons fumés"
+                )
+        );
+        paniniList.add(
+                new Panini(
+                        "PANINI KEBAB",
+                        new ArrayList<>() {
+                            {
+                                add(new Ingredient("Viande kebab"));
+                                add(new Ingredient("Mozzarella"));
+                                add(new Ingredient("Sauce blanche"));
+                            }
+                        },
+                        11.5f,
+                        "Crème fraîche légère française, mozzarella, mélange fondue aux 3 fromages (emmental, gruyère et beaufort), lardons fumés"
+                )
+        );
+
+        return paniniList;
+    }
+
+    private static List<Pizza> ourPizza() {
+        List<Pizza> pizzaList = new ArrayList<>();
+
+        pizzaList.add(
+                new Pizza(
+                        "SAVOUREUSE FONDUE",
+                        new ArrayList<>() {
+                            {
+                                add(new Ingredient("Lardons"));
+                                add(new Ingredient("Fromage"));
+                                add(new Ingredient("Mozzarella"));
+                                add(new Ingredient("Crème fraîche"));
+                            }
+                        },
+                        Pizza.DoughType.CLASSIC,
+                        11.5f,
+                        "Crème fraîche légère française, mozzarella, mélange fondue aux 3 fromages (emmental, gruyère et beaufort), lardons fumés"
+                )
+        );
+
+        pizzaList.add(
+                new Pizza(
+                        "SAVOUREUSE FONDUE",
+                        new ArrayList<>() {
+                            {
+                                add(new Ingredient("Lardons"));
+                                add(new Ingredient("Fromage"));
+                                add(new Ingredient("Mozzarella"));
+                                add(new Ingredient("Crème fraîche"));
+                            }
+                        },
+                        Pizza.DoughType.CLASSIC,
+                        11.5f,
+                        "Crème fraîche légère française, mozzarella, mélange fondue aux 3 fromages (emmental, gruyère et beaufort), lardons fumés"
+                )
+        );
+        pizzaList.add(
+                new Pizza(
+                        "SAVOUREUSE FONDUE",
+                        new ArrayList<>() {
+                            {
+                                add(new Ingredient("Lardons"));
+                                add(new Ingredient("Fromage"));
+                                add(new Ingredient("Mozzarella"));
+                                add(new Ingredient("Crème fraîche"));
+                            }
+                        },
+                        Pizza.DoughType.CLASSIC,
+                        11.5f,
+                        "Crème fraîche légère française, mozzarella, mélange fondue aux 3 fromages (emmental, gruyère et beaufort), lardons fumés"
+                )
+        );
+        pizzaList.add(
+                new Pizza(
+                        "SAVOUREUSE FONDUE",
+                        new ArrayList<>() {
+                            {
+                                add(new Ingredient("Lardons"));
+                                add(new Ingredient("Fromage"));
+                                add(new Ingredient("Mozzarella"));
+                                add(new Ingredient("Crème fraîche"));
+                            }
+                        },
+                        Pizza.DoughType.CLASSIC,
+                        11.5f,
+                        "Crème fraîche légère française, mozzarella, mélange fondue aux 3 fromages (emmental, gruyère et beaufort), lardons fumés"
+                )
+        );
+
+        return pizzaList;
     }
 
     static void initialize() {

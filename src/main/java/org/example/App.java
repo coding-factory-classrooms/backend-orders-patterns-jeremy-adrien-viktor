@@ -37,6 +37,7 @@ public class App {
 
         paniniList.add(
                 new Panini(
+                        "panini_kebab",
                         "PANINI KEBAB",
                         new ArrayList<>() {
                             {
@@ -52,6 +53,7 @@ public class App {
 
         paniniList.add(
                 new Panini(
+                        "panini_3_fromage",
                         "PANINI 3 FROMAGES",
                         new ArrayList<>() {
                             {
@@ -67,6 +69,7 @@ public class App {
         );
         paniniList.add(
                 new Panini(
+                        "panini_poulet",
                         "PANINI POULET",
                         new ArrayList<>() {
                             {
@@ -83,6 +86,7 @@ public class App {
         );
         paniniList.add(
                 new Panini(
+                        "panini_saumon",
                         "PANINI SAUMON",
                         new ArrayList<>() {
                             {
@@ -106,6 +110,7 @@ public class App {
 
         pizzaList.add(
                 new Pizza(
+                        "savoureuse_fondue",
                         "SAVOUREUSE FONDUE",
                         new ArrayList<>() {
                             {
@@ -123,6 +128,7 @@ public class App {
 
         pizzaList.add(
                 new Pizza(
+                        "authentique_raclette",
                         "AUTHENTIQUE RACLETTE",
                         new ArrayList<>() {
                             {
@@ -141,6 +147,7 @@ public class App {
         );
         pizzaList.add(
                 new Pizza(
+                        "genereuse_avalanche",
                         "Généreuse Avalanche",
                         new ArrayList<>() {
                             {
@@ -157,6 +164,7 @@ public class App {
         );
         pizzaList.add(
                 new Pizza(
+                        "urban_kebab",
                         "Urban Kebab",
                         new ArrayList<>() {
                             {

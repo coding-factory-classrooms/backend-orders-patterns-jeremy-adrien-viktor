@@ -33,9 +33,9 @@ public class App {
             return Template.render("home.html", model);
         });
 
-//        Spark.get("/order", (req, res) -> orderController.orderDetail(req,res));
         Spark.post("/order", (req, res) -> orderController.orderCreate(req,res));
         Spark.get("/dashboard", (req, res) -> orderController.dashBoard(req,res));
+        Spark.get("/myOrder/:id", (req, res) -> orderController.clientOrder(req,res));
         Spark.get("/dashboard/:id", (req, res) -> orderController.orderDetail(req,res));
 
     }

@@ -14,7 +14,7 @@ public class OrdersSystem {
         return orderList;
     }
 
-    public Order createOrderAndReturn(List<Dish> dishes) {
+    public void createOrderAndReturn(List<Dish> dishes) {
         float sum = 0;
         for(int i = 0; i < dishes.size(); i++)
             sum += dishes.get(i).getPrice();
@@ -25,7 +25,6 @@ public class OrdersSystem {
         order.setTotalPrice(sum);
         order.setState(Order.State.NEW);
         orderList.add(order);
-        return orderList.get(orderList.size() -1);
     }
 
     public OrdersSystem() {

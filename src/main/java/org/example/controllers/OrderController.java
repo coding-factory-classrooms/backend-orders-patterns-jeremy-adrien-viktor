@@ -28,27 +28,21 @@ public class OrderController {
         this.paniniList = paniniList;
     }
 
-//    public String orderDetail(Request req, Response res){
-//        Map<String, Object> model = new HashMap<>();
-//        return Template.render("clientOrder.html",model);
-//    }
-
     public Object orderCreate(Request req, Response res) {
         Map<String, String> reqBody = URLUtils.decodeQuery(req.body());
 
         List<Dish> dishes = new ArrayList<>();
         if (!reqBody.get("pizza").isEmpty()) {
-            Pizza selectedPizza = pizzaList.get(Integer.parseInt(reqBody.get("pizza")));
+            Pizza selectedPizza = pizzaList.get(Integer.parseInt(reqBody.get("pizza"))-1);
             dishes.add(selectedPizza);
         }
         if (!reqBody.get("panini").isEmpty()) {
-            Panini selectedPanini = paniniList.get(Integer.parseInt(reqBody.get("panini")));
+            Panini selectedPanini = paniniList.get(Integer.parseInt(reqBody.get("panini"))-1);
             dishes.add(selectedPanini);
         }
-        Order o = orders.createOrderAndReturn(dishes);
-        Map<String, Object> model = new HashMap<>();
-        model.put("order", o);
-        return Template.render("clientOrder.html", model);
+        orders.createOrderAndReturn(dishes);
+        res.redirect("/myOrder/" + orders.getOrderList().size());
+        return "";
     }
 
     public String dashBoard(Request req, Response res){
@@ -75,6 +69,17 @@ public class OrderController {
         model.put("id", id);
         model.put("order",orders.getOrder(index));
         return  Template.render("orderDetail.html", model);
+    }
+
+    public Object clientOrder(Request req, Response res) {
+
+        String idParam = req.params(":id");
+        int id = Integer.parseInt(idParam);
+        int index = id - 1;
+
+        Map<String, Object> model = new HashMap<>();
+        model.put("order", orders.getOrder(index));
+        return Template.render("clientOrder.html", model);
     }
 }
 

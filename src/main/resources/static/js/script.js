@@ -1,37 +1,33 @@
-const addCode = () => {
+const addSelectHtml = (string,idValue) => {
   let value = "test";
-  console.log("value");
+  console.log("value",string);
   // let idValues = document.getElementsByClassName()
-  document.getElementById("add_zone").innerHTML += `
+  document.getElementById(`${idValue}`).innerHTML += `
      <p class="title">Select pizza</p>
      <div class="custom-select">
      <select class='select-css' name='pizza'>
-     <option value=''>--Please choose an option--</option>
-     <option value=''>SAVOUREUSE FONDUE</option>
-     <option value=''>AUTHENTIQUE RACLETTE</option>
-     <option value=''>Généreuse Avalanche</option>
-     <option value=''>Urban Kebab</option>
+     <option value=''>${string}</option>
      </select>
      </div>
      <div>
      
      `;
 };
-const test = (select) => {
-  var myElem = document.getElementById("pizza_image_container");
+
+const handlePizzaImage = (select,imageParentContainer,imageContainerName) => {
+  var myElem = document.getElementById(`${imageContainerName}`);
   if (myElem === null) {
     console.log("does not exist!");
   } else {
       console.log("not null")
-      var myobj = document.getElementById("pizza_image_container");
+      var myobj = document.getElementById(`${imageContainerName}`);
       myobj.remove();
   }
   // if(document.getElementsByClassName('pizza_image_container') == null){
   //     console.log('image container should be null')
   // }
-  document.getElementById("pizza_image").innerHTML += `
-    <div class="fade-in" id='pizza_image_container'>
-    
+  document.getElementById(`${imageParentContainer}`).innerHTML += `
+    <div class="fade-in" id='${imageContainerName}'>
     <img src='/img/${
       select.options[select.selectedIndex].text
     }.jpeg' style="width: 300px;height: 200px; object-fit: contain;margin-top:5%;">

@@ -1,17 +1,17 @@
 #parse("base.html") #@mainLayout()
 <div class="center-single-item">
-<h1 class="title">Choose your pizza</h1>
+<h1 class="title">Faites votre choix</h1>
 </div>
 <div>
   <form action="order" method="post">
     <div id="item">
       <div class="row-container">
         <div class="form-style">
-          <p class="title">Select pizza</p>
+          <p class="title">Pizza</p>
           <div class="custom-select">
-            <select onchange="test(this)" class="select-css" name="pizza">
+            <select onchange="handlePizzaImage(this,'pizza_image','pizza_image_container')" class="select-css" name="pizza">
               <option key="$p.getTitle()" value="">
-                Please choose an option
+                Sélectionnez une pizza
               </option>
               #foreach ($p in $pizzaList)
               <option onclick="test()" class="testing" value="$velocityCount">
@@ -21,20 +21,25 @@
             </select>
             <div id="pizza_image"></div>
           </div>
-          <div id="add_zone"></div>
+          <div id="add_pizza_zone"></div>
           <div class="center-single-item">
-          <input  class="button button1" type="button" value="Ajouter plus de pizzas" onclick="addCode()"/>
+          <input  class="button button1" type="button" value="Ajouter plus de pizzas" onclick="addSelectHtml('Sélectionnez une pizza','add_pizza_zone')"/>
         </div>
         </div>
         <div  class="form-style">
-          <p class="title">Select panini</p>
+          <p class="title">Panini</p>
           <div class="custom-select">
-            <select class="select-css" name="panini">
-              <option value="">Please choose an option</option>
+            <select onchange="handlePizzaImage(this,'panini_image','panini_image_container')" class="select-css" name="panini">
+              <option value="">Sélectionnez un panini</option>
               #foreach ($p in $paniniList)
               <option value="$velocityCount">$p.getTitle()</option>
               #end
             </select>
+            <div id="panini_image"></div>
+          </div>
+          <div id="add_panini_zone"></div>
+          <div class="center-single-item">
+            <input  class="button button1" type="button" value="Ajouter plus de panninis" onclick="addSelectHtml('Sélectionnez un panini','add_panini_zone')"/>
           </div>
         </div>
       </div>

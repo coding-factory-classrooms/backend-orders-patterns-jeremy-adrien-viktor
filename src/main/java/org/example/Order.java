@@ -2,7 +2,6 @@ package org.example;
 
 import org.example.models.Dish;
 
-import java.nio.file.FileStore;
 import java.util.List;
 
 public class Order {
@@ -14,7 +13,7 @@ public class Order {
         CANCEL,
     }
 
-    private List<Dish> dishList;
+    private List<Dish> orderList;
     private State state;
 
     public State getState() {
@@ -25,16 +24,16 @@ public class Order {
         this.state = state;
     }
 
-    public List<Dish> getDishList() {
-        return dishList;
+    public List<Dish> getOrderList() {
+        return orderList;
     }
 
-    public void setDishList(List<Dish> dishList) {
-        this.dishList = dishList;
+    public void setOrderList(List<Dish> orderList) {
+        this.orderList = orderList;
     }
 
     public boolean addOrder(Dish dish){
         this.state = State.NEW;
-        return this.dishList.add(dish);
+        return this.orderList.add(dish);
     }
 }

@@ -19,8 +19,13 @@ public class App {
     public static void main(String[] args) {
         initialize();
 
+        Order orders = new Order();
+        orders.setOrderList(new ArrayList<>());
         List<Pizza> pizzaList = ourPizza();
         List<Panini> paniniList = ourPanini();
+
+        OrderController orderController = new OrderController(orders, pizzaList,paniniList);
+
 
         Map<String, Object> model = new HashMap<>();
         model.put("pizzaList", pizzaList);
@@ -30,6 +35,9 @@ public class App {
         Spark.get("/", (req, res) -> {
             return Template.render("home.html", model);
         });
+
+//        Spark.get("/order", (req, res) -> orderController.orderDetail(req,res));
+        Spark.post("/order", (req, res) -> orderController.orderCreate(req,res));
     }
 
     private static List<Panini> ourPanini() {

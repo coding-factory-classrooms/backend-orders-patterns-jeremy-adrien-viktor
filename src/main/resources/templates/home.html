@@ -2,44 +2,45 @@
 #@mainLayout()
 <h1>Home Template</h1>
 <div>
-    <div id="item">
-        <div>
-            <p>Select pizza</p>
-            <select id="pizza">
-                <option value="">--Please choose an option--</option>
-                #foreach ($p in $pizzaList)
-                <option value="$p.getName()">
-                    $p.getTitle()
-                </option>
-                #end
-            </select>
+    <form action="order" method="post">
+        <div id="item">
+            <div>
+                <p>Select pizza</p>
+                <select name="pizza">
+                    <option value="">--Please choose an option--</option>
+                    #foreach ($p in $pizzaList)
+                    <option value="$velocityCount">
+                        $p.getTitle()
+                    </option>
+                    #end
+                </select>
+            </div>
+            <div>
+                <p>Select panini</p>
+                <select name="panini">
+                    <option value="">--Please choose an option--</option>
+                    #foreach ($p in $paniniList)
+                    <option value="$velocityCount">
+                        $p.getTitle()
+                    </option>
+                    #end
+                </select>
+            </div>
         </div>
-        <div>
-            <p>Select panini</p>
-            <select id="panini">
-                <option value="">--Please choose an option--</option>
-                #foreach ($p in $paniniList)
-                <option value="$p.getName()">
-                    $p.getTitle()
-                </option>
-                #end
-            </select>
-        </div>
-    </div>
-
-    <button id="btn_valide">Valider la commande</button>
-
+        <input type="submit" value="Valider la commande">
+    </form>
+<!--    <button id="btn_valide">Valider la commande</button>-->
 </div>
 
-<script type="text/javascript">
+<!--<script type="text/javascript">-->
 
-    document.getElementById("btn_valide").onclick = function(){
-        console.log("onClick");
-        const selection = document.getElementById("item").querySelectorAll("select");
-        let value = "";
-        selection.forEach(s => {value += s.value + ","});
-        window.location = "/?action=valide_commande&value=" + value;
-    };
+<!--    document.getElementById("btn_valide").onclick = function(){-->
+<!--        console.log("onClick");-->
+<!--        const selection = document.getElementById("item").querySelectorAll("select");-->
+<!--        let value = "";-->
+<!--        selection.forEach(s => {value += s.value + ","});-->
+<!--        window.location = "/?action=create_order&value=" + value;-->
+<!--    };-->
 
-</script>
+<!--</script>-->
 #end

@@ -1,33 +1,64 @@
-#parse("base.html")
-#@mainLayout()
-<h1>Home Template</h1>
-<div>
-    <form action="order" method="post">
-        <div id="item">
-            <div>
-                <p>Select pizza</p>
-                <select name="pizza">
-                    <option value="">--Please choose an option--</option>
-                    #foreach ($p in $pizzaList)
-                    <option value="$velocityCount">
-                        $p.getTitle()
-                    </option>
-                    #end
-                </select>
-            </div>
-            <div>
-                <p>Select panini</p>
-                <select name="panini">
-                    <option value="">--Please choose an option--</option>
-                    #foreach ($p in $paniniList)
-                    <option value="$velocityCount">
-                        $p.getTitle()
-                    </option>
-                    #end
-                </select>
-            </div>
-        </div>
-        <input type="submit" value="Valider la commande">
-    </form>
+#parse("base.html") #@mainLayout()
+<div class="center-single-item">
+<h1 class="title">Faites votre choix</h1>
 </div>
-#end
+<div>
+  <form action="order" method="post">
+    <div id="item">
+      <div class="row-container">
+        <div class="form-style">
+          <p class="title">Pizza</p>
+          <div class="custom-select">
+            <select onchange="handlePizzaImage(this,'pizza_image','pizza_image_container')" class="select-css" name="pizza">
+              <option key="$p.getTitle()" value="">
+                Sélectionnez une pizza
+              </option>
+              #foreach ($p in $pizzaList)
+              <option onclick="test()" class="testing" value="$velocityCount">
+                $p.getTitle()
+              </option>
+              #end
+            </select>
+            <div id="pizza_image"></div>
+          </div>
+          <div id="add_pizza_zone"></div>
+          <div class="center-single-item">
+          <input  class="button button1" type="button" value="Ajouter plus de pizzas" onclick="addSelectHtml('Sélectionnez une pizza','add_pizza_zone')"/>
+        </div>
+        </div>
+        <div  class="form-style">
+          <p class="title">Panini</p>
+          <div class="custom-select">
+            <select onchange="handlePizzaImage(this,'panini_image','panini_image_container')" class="select-css" name="panini">
+              <option value="">Sélectionnez un panini</option>
+              #foreach ($p in $paniniList)
+              <option value="$velocityCount">$p.getTitle()</option>
+              #end
+            </select>
+            <div id="panini_image"></div>
+          </div>
+          <div id="add_panini_zone"></div>
+          <div class="center-single-item">
+            <input  class="button button1" type="button" value="Ajouter plus de panninis" onclick="addSelectHtml('Sélectionnez un panini','add_panini_zone')"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="center-single-item">
+      <input class="button button1" type="submit" value="Valider la commande" />
+    </div>
+  </form>
+
+  <!--<script type="text/javascript">-->
+
+  <!--    document.getElementById("btn_valide").onclick = function(){-->
+  <!--        console.log("onClick");-->
+  <!--        const selection = document.getElementById("item").querySelectorAll("select");-->
+  <!--        let value = "";-->
+  <!--        selection.forEach(s => {value += s.value + ","});-->
+  <!--        window.location = "/?action=create_order&value=" + value;-->
+  <!--    };-->
+
+  <!--</script>-->
+  #end
+</div>

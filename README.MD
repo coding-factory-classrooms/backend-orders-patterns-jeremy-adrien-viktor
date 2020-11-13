@@ -4,7 +4,7 @@
 [Backlog sur trello](https://trello.com/b/cFfG6QOI/project-design-patterns)
 
 ## Design Patterns :
-   - Observer
-   - Memeno
+   - [[Observer]](https://refactoring.guru/design-patterns/observer)
+   - [[Memeno]](https://refactoring.guru/design-patterns/memento)
 
-## diagramme de classe UML :
+## Diagramme de classe UML :

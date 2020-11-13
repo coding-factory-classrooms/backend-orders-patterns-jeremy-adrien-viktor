@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class OrdersSystem {
+public class OrdersSystem implements Order.OnStateChangedListener{
 
     private final List<Order> orderList;
 
@@ -32,6 +32,7 @@ public class OrdersSystem {
         order.setDateOrder(new Date());
         order.setTotalPrice(sum);
         order.setState(Order.State.NEW);
+        order.setStateChangedListener(this);
         orderList.add(order);
 
         history.add(this.ordersOriginator.save(orderList));
@@ -45,5 +46,11 @@ public class OrdersSystem {
 
     public Order getOrder(int index) {
         return orderList.get(index);
+    }
+
+    @Override
+    public void onSateChanged(Order order) {
+        System.out.println("observer onchange");
+        history.add(this.ordersOriginator.save(orderList));
     }
 }

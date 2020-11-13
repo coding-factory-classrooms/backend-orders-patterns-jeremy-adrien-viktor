@@ -1,7 +1,5 @@
 package org.example.models;
 
-import org.example.models.Dish;
-
 import java.util.Date;
 import java.util.List;
 
@@ -58,17 +56,22 @@ public class Order {
 
     public void setState(State state) {
         this.state = state;
+        setDateOrder(new Date());
+        if (stateChangedListener != null) {
+            stateChangedListener.onSateChanged(this);
+        }
     }
 
     public List<Dish> getDish() {
         return dish;
     }
 
-    public boolean isInThisState(State state){
-        System.out.println("state");
-        if (getState() == state){
-            return true;
-        }
-        return false;
+    public interface OnStateChangedListener {
+        void onSateChanged(Order order);
+    }
+    private OnStateChangedListener stateChangedListener;
+
+    public void setStateChangedListener(OnStateChangedListener listener) {
+        stateChangedListener = listener;
     }
 }

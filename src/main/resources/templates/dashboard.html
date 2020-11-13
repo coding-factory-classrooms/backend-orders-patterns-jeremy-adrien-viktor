@@ -1,0 +1,46 @@
+#parse("base.html")
+#@mainLayout()
+<div class="center-single-item">
+    <h1 class="title">Dashboard</h1>
+</div>
+<div style="width: 80%; margin-left:auto;margin-right:auto;">
+    <div style="margin-top:5%;margin-bottom:5%">
+        <h2 class="title">Order</h2>
+        <table>
+            <thead>
+            <tr>
+                <th class="title">ID</th>
+                <th class="title">Order</th>
+                <th class="title">Date</th>
+                <th class="title">Price</th>
+                <th class="title">State</th>
+            </tr>
+            </thead>
+            <tbody>
+            #foreach ($o in $orders)
+            <tr>
+                <td class="title" style="color: black!important;"><a href="/dashboard/$velocityCount">$velocityCount</a></td>
+                <td class="title" style="color: black!important;">$o.getDish()</td>
+                <td class="title" style="color: black!important;">$o.getDateOrder()</td>
+                <td class="title" style="color: black!important;">$o.getTotalPrice()</td>
+                <td class="title" style="color: black!important;">$o.getState()</td>
+            </tr>
+            #end
+            </tbody>
+        </table>
+
+    </div>
+
+    <div style="margin-top:5%;margin-bottom:5%">
+    <h2 class="title">History</h2>
+    <ul style="background-color: white;" class="list-group">
+        #foreach ($o in $ordershistory)
+            <li class="title" style="color: black !important; margin-top:10px;margin-bottom:10px;" >$o</li>
+        #end
+    </ul>
+</div>
+</div>
+<div class="center-single-item">
+    <a href="/" class="title">Go to Home</a>
+</div>
+#end

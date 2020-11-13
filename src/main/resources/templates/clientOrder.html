@@ -1,0 +1,23 @@
+#parse("base.html")
+#@mainLayout()
+<div class="center-single-item">
+    <h1 class="title">Order</h1>
+</div>
+<div class="centered">  
+    <table id="t01">
+        <tr>
+          <th class="title">Order</th>
+          <th class="title">Status</th>
+        </tr>
+        <tr>
+          <td class="title" style="color: black !important;">$order.getDish()</td>
+          <td class="title" style="color: black !important;"> $order.getState()</td>
+        </tr>
+      </table>
+      <div class="center-single-item">
+      <a href="/dashboard"  class="title">
+          Go to Dahsboard
+      </a>
+    </div>
+</div>
+#end

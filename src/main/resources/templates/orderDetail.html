@@ -1,0 +1,72 @@
+#parse("base.html")
+#@mainLayout()
+<div class="center-single-item">
+<h1 class="title">Order detail Template</h1>
+</div>
+<div style="width: 90%;display: flex; flex-direction:column; justify-content: center;align-items: center;">
+    <table>
+        <thead>
+        <tr>
+            <th class="title">Dish</th>
+            <th class="title">Date</th>
+            <th class="title">Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+           
+            <td class="title" style="color: black!important;">$order.getDish()</td>
+            <td class="title" style="color: black!important;">$order.getDateOrder()</td>
+            <td class="title" style="color: black!important;">$order.getState()</td>
+        </tr>
+        </tbody>
+    </table>
+    <div style="margin-top:5%;margin-bottom:5%">
+
+    <button style="background-color: #00b89f; color:white; height:40px; border-color:transparent; border-radius:5px;" id="update_to_NEW"
+        #if ($order.getState().name() == "NEW")
+            disabled
+        #end
+    >NEW</button>
+    <button style="background-color: #ffa703; color:white;height:40px; border-color:transparent; border-radius:5px;"  class="btn btn-warning" id="update_to_IN_PROGRESS"
+        #if ($order.getState().name() == "IN_PROGRESS")
+            disabled
+        #end
+    >IN PROGRESS</button>
+    <button style="background-color: #00c407; color:white;height:40px; border-color:transparent; border-radius:5px;" class="btn btn-success" id="update_to_DONE"
+        #if ($order.getState().name() == "DONE")
+            disabled
+        #end
+    >DONE</button>
+    <button style="background-color: #ff0000; color:white;height:40px; border-color:transparent; border-radius:5px;" class="btn btn-danger" id="update_to_CANCEL"
+        #if ($order.getState().name() == "CANCEL")
+            disabled
+        #end
+    >CANCEL</button>
+</div>
+<div style="margin-top:5%;margin-bottom:5%">
+    <a class="title" href="/dashboard" type="button" class="btn btn-info">Back to dashboard</a>
+
+</div>
+</div>
+
+<script type="text/javascript">
+
+    document.getElementById("update_to_NEW").onclick = function(){
+        window.location = "/dashboard/$id?action=set_state&value=NEW"
+    }
+
+    document.getElementById("update_to_IN_PROGRESS").onclick = function(){
+        window.location = "/dashboard/$id?action=set_state&value=IN_PROGRESS"
+    }
+
+    document.getElementById("update_to_DONE").onclick = function(){
+        window.location = "/dashboard/$id?action=set_state&value=DONE"
+    }
+
+    document.getElementById("update_to_CANCEL").onclick = function(){
+        window.location = "/dashboard/$id?action=set_state&value=CANCEL"
+    }
+
+</script>
+#end

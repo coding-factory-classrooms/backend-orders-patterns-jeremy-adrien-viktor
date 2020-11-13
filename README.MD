@@ -6,9 +6,9 @@
 
 ## Design Patterns
 
-- [[Observer]](https://refactoring.guru/design-patterns/observer)
+- [Observer](https://refactoring.guru/design-patterns/observer)
 
-- [[Memeno]](https://refactoring.guru/design-patterns/memento)
+- [Memeno](https://refactoring.guru/design-patterns/memento)
 
 ## Diagramme de classe UML
 

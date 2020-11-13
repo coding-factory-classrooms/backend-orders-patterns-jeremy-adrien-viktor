@@ -17,3 +17,4 @@
 ## Diagramme de séquence UML
 
   ![Diagramme de séquence](./readme/diagramme_sequence_validation_creation_commande.jpg)
+  

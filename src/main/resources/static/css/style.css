@@ -103,3 +103,10 @@ table {
   /* bring your own prefixes */
   transform: translate(-50%, -50%);
 }
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc !important;
+  color: #666666;
+}

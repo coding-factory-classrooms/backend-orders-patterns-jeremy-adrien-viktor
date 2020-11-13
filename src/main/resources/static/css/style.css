@@ -1,5 +1,5 @@
 body {
-  background-color: #8cb8ff;
+  background-color: #8cb8ff !important;
   height: 100vh;
 }
 
@@ -17,7 +17,9 @@ table {
     padding: 8px;
   }
   
-  tr:nth-child(even){background-color: #f2f2f2}
+  tr{
+    background-color: #f2f2f2
+  }
   
   th {
     background-color: #4CAF50;
@@ -92,4 +94,12 @@ table {
   100% {
     opacity: 1;
   }
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
 }

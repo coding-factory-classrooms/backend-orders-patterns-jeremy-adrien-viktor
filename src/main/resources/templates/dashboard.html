@@ -1,38 +1,43 @@
 #parse("base.html")
 #@mainLayout()
-<h1>Dashboard Template</h1>
-<div>
-    <h2>Order</h2>
+<div class="center-single-item">
+    <h1 class="title">Dashboard</h1>
+</div>
+<div style="width: 80%; margin-left:auto;margin-right:auto;">
+    <div style="margin-top:5%;margin-bottom:5%">
+        <h2 class="title">Order</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Order</th>
+                <th>Date</th>
+                <th>Price</th>
+                <th>State</th>
+            </tr>
+            </thead>
+            <tbody>
+            #foreach ($o in $orders)
+            <tr>
+                <td><a href="/dashboard/$velocityCount">$velocityCount</a></td>
+                <td>$o.getDish()</td>
+                <td>$o.getDateOrder()</td>
+                <td>$o.getTotalPrice()</td>
+                <td>$o.getState()</td>
+            </tr>
+            #end
+            </tbody>
+        </table>
 
-    <table>
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Order</th>
-            <th>Date</th>
-            <th>Price</th>
-            <th>State</th>
-        </tr>
-        </thead>
-        <tbody>
-        #foreach ($o in $orders)
-        <tr>
-            <td><a href="/dashboard/$velocityCount">$velocityCount</a></td>
-            <td>$o.getDish()</td>
-            <td>$o.getDateOrder()</td>
-            <td>$o.getTotalPrice()</td>
-            <td>$o.getState()</td>
-        </tr>
-        #end
-        </tbody>
-    </table>
+    </div>
 
-    <h2>History</h2>
-    <ul>
+    <div style="margin-top:5%;margin-bottom:5%">
+    <h2 class="title">History</h2>
+    <ul  class="list-group">
         #foreach ($o in $ordershistory)
-            <li>$o</li>
+            <li class="list-group-item" >$o</li>
         #end
     </ul>
-
+</div>
 </div>
 #end

@@ -1,34 +1,41 @@
 #parse("base.html")
 #@mainLayout()
-<h1>Order detail Template</h1>
-<div>
+<div class="center-single-item">
+<h1 class="title">Order detail Template</h1>
+</div>
+<div style="width: 90%;display: flex; flex-direction:column; justify-content: center;align-items: center;">
 
     $order.getDish()
     $order.getDateOrder()
     $order.getState()
 
+    <div style="margin-top:5%;margin-bottom:5%">
 
-    <button id="update_to_NEW"
+    <button class="btn btn-primary" id="update_to_NEW"
         #if ($order.getState().name() == "NEW")
             disabled
         #end
     >NEW</button>
-    <button id="update_to_IN_PROGRESS"
+    <button class="btn btn-warning" id="update_to_IN_PROGRESS"
         #if ($order.getState().name() == "IN_PROGRESS")
             disabled
         #end
     >IN PROGRESS</button>
-    <button id="update_to_DONE"
+    <button class="btn btn-success" id="update_to_DONE"
         #if ($order.getState().name() == "DONE")
             disabled
         #end
     >DONE</button>
-    <button id="update_to_CANCEL"
+    <button class="btn btn-danger" id="update_to_CANCEL"
         #if ($order.getState().name() == "CANCEL")
             disabled
         #end
     >CANCEL</button>
+</div>
+<div style="margin-top:5%;margin-bottom:5%">
+    <button onclick="window.location.replace('/dashboard')" type="button" class="btn btn-info">Back to dashboard</button>
 
+</div>
 </div>
 
 <script type="text/javascript">

@@ -1,8 +1,19 @@
 #parse("base.html")
 #@mainLayout()
-<h1>Client order Template</h1>
-<div>
-    $order.getDish()
-    $order.getState()
+<div class="center-single-item">
+    <h1 class="title">Order</h1>
+</div>
+<div class="centered">  
+    <table id="t01">
+        <tr>
+          <th>Order</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td>$order.getDish()</td>
+          <td> $order.getState()</td>
+        </tr>
+      </table>
+    
 </div>
 #end

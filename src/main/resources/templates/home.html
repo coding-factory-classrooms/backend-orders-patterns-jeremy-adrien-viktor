@@ -1,15 +1,40 @@
 #parse("base.html") #@mainLayout()
 <div class="center-single-item">
-<h1 class="title">Faites votre choix</h1>
+  <h1 class="title">Faites votre choix</h1>
 </div>
-<div>
-  <form action="order" method="post">
+
+<div
+class="title"
+style="
+position: -webkit-fixed;
+border-radius:10px;
+position: fixed;
+top: 15%;
+right: 0;
+padding: 5px;
+width: 200px;
+background-color:rgba(226, 114, 114, 0.76);;
+font-size: 20px;
+z-index: 999;
+
+"
+>
+Orders
+<div id="add_orders"></div>
+</div>
+
+<form action="order" method="post">
+  <div style="display: flex; flex-direction: column">
     <div id="item">
       <div class="row-container">
         <div class="form-style">
           <p class="title">Pizza</p>
           <div class="custom-select">
-            <select onchange="handlePizzaImage(this,'pizza_image','pizza_image_container')" class="select-css" name="pizza">
+            <select
+              onchange="handlePizzaImage(this,'pizza_image','pizza_image_container')"
+              class="select-css"
+              name="pizza"
+            >
               <option key="$p.getTitle()" value="">
                 Sélectionnez une pizza
               </option>
@@ -23,13 +48,22 @@
           </div>
           <div id="add_pizza_zone"></div>
           <div class="center-single-item">
-          <input  class="button button1" type="button" value="Ajouter plus de pizzas" onclick="addSelectHtml('Sélectionnez une pizza','add_pizza_zone')"/>
+            <input
+              class="button button1"
+              type="button"
+              value="Ajouter plus de pizzas"
+              onclick="addSelectHtml('Sélectionnez une pizza','add_pizza_zone')"
+            />
+          </div>
         </div>
-        </div>
-        <div  class="form-style">
+        <div class="form-style">
           <p class="title">Panini</p>
           <div class="custom-select">
-            <select onchange="handlePizzaImage(this,'panini_image','panini_image_container')" class="select-css" name="panini">
+            <select
+              onchange="handlePizzaImage(this,'panini_image','panini_image_container')"
+              class="select-css"
+              name="panini"
+            >
               <option value="">Sélectionnez un panini</option>
               #foreach ($p in $paniniList)
               <option value="$velocityCount">$p.getTitle()</option>
@@ -39,26 +73,32 @@
           </div>
           <div id="add_panini_zone"></div>
           <div class="center-single-item">
-            <input  class="button button1" type="button" value="Ajouter plus de panninis" onclick="addSelectHtml('Sélectionnez un panini','add_panini_zone')"/>
+            <input
+              class="button button1"
+              type="button"
+              value="Ajouter plus de panninis"
+              onclick="addSelectHtml('Sélectionnez un panini','add_panini_zone')"
+            />
           </div>
         </div>
       </div>
     </div>
+    
     <div class="center-single-item">
       <input class="button button1" type="submit" value="Valider la commande" />
     </div>
-  </form>
+  </div>
+</form>
 
-  <!--<script type="text/javascript">-->
+<!--<script type="text/javascript">-->
 
-  <!--    document.getElementById("btn_valide").onclick = function(){-->
-  <!--        console.log("onClick");-->
-  <!--        const selection = document.getElementById("item").querySelectorAll("select");-->
-  <!--        let value = "";-->
-  <!--        selection.forEach(s => {value += s.value + ","});-->
-  <!--        window.location = "/?action=create_order&value=" + value;-->
-  <!--    };-->
+<!--    document.getElementById("btn_valide").onclick = function(){-->
+<!--        console.log("onClick");-->
+<!--        const selection = document.getElementById("item").querySelectorAll("select");-->
+<!--        let value = "";-->
+<!--        selection.forEach(s => {value += s.value + ","});-->
+<!--        window.location = "/?action=create_order&value=" + value;-->
+<!--    };-->
 
-  <!--</script>-->
-  #end
-</div>
+<!--</script>-->
+#end

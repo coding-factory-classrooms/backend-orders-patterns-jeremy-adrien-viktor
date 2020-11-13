@@ -34,4 +34,14 @@ const handlePizzaImage = (select,imageParentContainer,imageContainerName) => {
     </div>
     </div>
     `;
+  document.getElementById('add_orders').innerHTML+=
+  `
+  <div class="title">${select.options[select.selectedIndex].text}</div>
+  <div class="fade-in" id='${imageContainerName}'>
+  <img src='/img/${
+    select.options[select.selectedIndex].text
+  }.jpeg' style="width: 200px;height: 150px; object-fit: contain;margin-top:5%;">
+  </div>
+  </div>
+  `;
 };

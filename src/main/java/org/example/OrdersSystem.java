@@ -9,7 +9,7 @@ import java.util.List;
 
 public class OrdersSystem implements Order.OnStateChangedListener{
 
-    private final List<Order> orderList;
+    private List<Order> orderList;
 
     private List<OrdersOriginator.Memento> history;
     private OrdersOriginator ordersOriginator;
@@ -36,6 +36,7 @@ public class OrdersSystem implements Order.OnStateChangedListener{
         orderList.add(order);
 
         history.add(this.ordersOriginator.save(orderList));
+        indexhistory = history.size()-1;
     }
 
     public OrdersSystem() {
@@ -50,7 +51,22 @@ public class OrdersSystem implements Order.OnStateChangedListener{
 
     @Override
     public void onSateChanged(Order order) {
-        System.out.println("observer onchange");
         history.add(this.ordersOriginator.save(orderList));
+        indexhistory = history.size()-1;
+
     }
+
+    private int indexhistory;
+    public void undo(){
+        indexhistory -= 1;
+        if (indexhistory < 0 ){ return;}
+        orderList = this.ordersOriginator.getAtState(history.get(indexhistory));
+    }
+
+    public void redo(){
+        indexhistory += 1;
+        if (indexhistory > history.size() -1 ){ return;}
+        orderList = this.ordersOriginator.getAtState(history.get(indexhistory));
+    }
+
 }

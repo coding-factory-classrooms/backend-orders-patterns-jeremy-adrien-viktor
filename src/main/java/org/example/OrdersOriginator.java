@@ -12,11 +12,15 @@ public class OrdersOriginator {
         return new Memento(orderList);
     }
 
+    public List<Order> getAtState(Memento memento) {
+        return memento.getOrderList();
+    }
+
     class Memento {
         private List<Order> orderList;
 
         public List<Order> getOrderList() {
-            return orderList;
+            return this.Kage_Bunshin_no_Jutsu(orderList);
         }
 
         @Override

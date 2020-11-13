@@ -45,6 +45,18 @@ public class OrderController {
     }
 
     public String dashBoard(Request req, Response res){
+
+        String action = req.queryParamOrDefault("action", "");
+        if (action.equals("undo")){
+            System.out.printf("undo");
+            orders.undo();
+        }
+
+        if (action.equals("redo")){
+            System.out.printf("redo");
+            orders.redo();
+        }
+
         Map<String, Object> model = new HashMap<>();
         model.put("orders",orders.getOrderList());
         model.put("ordershistory",orders.getHistory());
